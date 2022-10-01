@@ -28,8 +28,8 @@ export function Earth(): JSX.Element {
 
   return (
     <>
-      <mesh ref={cloudsRef} position={[-3, 0, -3]} name="EARTH">
-        <sphereGeometry args={[0.1, 32, 32]} />
+      <mesh ref={cloudsRef} position={[-4, 0, -4]} name="EARTH">
+        <sphereGeometry args={[0.5, 32, 32]} />
         <meshPhongMaterial
           map={cloudsMap}
           opacity={0.4}
@@ -38,8 +38,8 @@ export function Earth(): JSX.Element {
           side={THREE.DoubleSide}
         />
       </mesh>
-      <mesh ref={earthRef} position={[-3, 0, -3]}>
-        <sphereGeometry args={[0.1, 32, 32]} />
+      <mesh ref={earthRef} position={[-4, 0, -4]}>
+        <sphereGeometry args={[0.5, 32, 32]} />
         <meshPhongMaterial specularMap={specularMap} />
         <meshStandardMaterial
           map={colorMap}
