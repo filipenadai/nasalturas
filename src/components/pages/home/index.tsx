@@ -2,15 +2,22 @@
 /* eslint-disable no-sequences */
 import { Bounds, ContactShadows, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
+import { CaretLeft, CaretRight } from 'phosphor-react';
+import { Suspense, useContext } from 'react';
+import { CELESTIALS } from '../../../contants/celestial';
+import { CelestialBodyContext } from '../../../contexts/CelestialBodyContext';
 import { Earth } from '../../celestials/earth';
 import { Parker } from '../../celestials/parker';
 import { Space } from '../../celestials/space';
 import { Sun } from '../../celestials/sun';
 import { Venus } from '../../celestials/venus';
 import { SelectToZoom } from './selectToZoom';
+import { ControlButton, ControlsContainer } from './styles';
 
 export function Home(): JSX.Element {
+  const { nextStep, previousStep, stepIndex } =
+    useContext(CelestialBodyContext);
+
   return (
     <div
       style={{
@@ -21,7 +28,7 @@ export function Home(): JSX.Element {
     >
       <Canvas camera={{ position: [2, 2, 2], fov: 50 }} dpr={[1, 2]}>
         <Suspense fallback={null}>
-          <Bounds fit clip observe margin={1.2}>
+          <Bounds fit clip margin={1.2}>
             <SelectToZoom>
               <Sun />
               <Venus />
@@ -48,6 +55,18 @@ export function Home(): JSX.Element {
           />
         </Suspense>
       </Canvas>
+      <ControlsContainer>
+        {CELESTIALS.length > 1 && stepIndex !== 0 && (
+          <ControlButton onClick={previousStep}>
+            <CaretLeft size={24} />
+          </ControlButton>
+        )}
+        {CELESTIALS.length > 1 && stepIndex !== CELESTIALS.length - 1 && (
+          <ControlButton onClick={nextStep}>
+            <CaretRight size={24} />
+          </ControlButton>
+        )}
+      </ControlsContainer>
     </div>
   );
 }

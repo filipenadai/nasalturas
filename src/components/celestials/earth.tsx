@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unknown-property */
-import React, { useRef } from 'react';
+import React, { useContext } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 
 import { TextureLoader } from 'three';
+import { CelestialBodyContext } from '../../contexts/CelestialBodyContext';
 
 export function Earth(): JSX.Element {
   const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(
@@ -16,8 +17,7 @@ export function Earth(): JSX.Element {
     ]
   );
 
-  const earthRef = useRef();
-  const cloudsRef = useRef();
+  const { earthRef, cloudsRef } = useContext(CelestialBodyContext);
 
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();

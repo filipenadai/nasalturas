@@ -1,13 +1,14 @@
 /* eslint-disable react/no-unknown-property */
-import React, { useRef } from 'react';
+import React, { useContext } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
 
 import { TextureLoader } from 'three';
+import { CelestialBodyContext } from '../../contexts/CelestialBodyContext';
 
 export function Venus(): JSX.Element {
   const normalMap = useLoader(TextureLoader, '/venus.jpeg');
 
-  const venusRef = useRef();
+  const { venusRef } = useContext(CelestialBodyContext);
 
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();

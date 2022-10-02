@@ -1,13 +1,13 @@
 /* eslint-disable react/no-unknown-property */
-import React, { useRef } from 'react';
+import React, { useContext } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
 
 import { TextureLoader } from 'three';
+import { CelestialBodyContext } from '../../contexts/CelestialBodyContext';
 
 export function Sun(): JSX.Element {
   const normalMap = useLoader(TextureLoader, '/sun.jpeg');
-
-  const sunRef = useRef();
+  const { sunRef } = useContext(CelestialBodyContext);
 
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
