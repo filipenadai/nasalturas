@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 import { Header } from '../components/header';
 import { Introduction } from '../components/introduction';
@@ -11,6 +12,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
+      <Head>
+        <title>NASAlturas</title>
+      </Head>
       <CelestialBodyProvider>
         <IntroductionModalProvider>
           <Introduction />

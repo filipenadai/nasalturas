@@ -17,7 +17,7 @@ export function Sun(): JSX.Element {
 
   return (
     <mesh ref={sunRef} position={[0, 0, 0]} name="SUN">
-      <sphereGeometry args={[3, 64, 64]} />
+      <sphereGeometry args={[2, 64, 64]} />
       <meshStandardMaterial
         map={normalMap}
         normalMap={normalMap}
