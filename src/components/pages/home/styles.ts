@@ -4,6 +4,7 @@ export const ControlsContainer = styled.div`
   position: absolute;
   bottom: 10%;
   left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-content: center;
   justify-content: center;

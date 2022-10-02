@@ -17,7 +17,7 @@ export function Venus(): JSX.Element {
   });
 
   return (
-    <mesh ref={venusRef} position={[3, 0, -3]} name="VENUS">
+    <mesh ref={venusRef} position={[6, 0, -6]} name="VENUS">
       <sphereGeometry args={[0.5, 32, 32]} />
       <meshStandardMaterial
         map={normalMap}

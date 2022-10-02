@@ -2,10 +2,11 @@
 /* eslint-disable no-sequences */
 import { Bounds, ContactShadows, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { CaretLeft, CaretRight } from 'phosphor-react';
+import { CaretLeft, CaretRight, Repeat } from 'phosphor-react';
 import { Suspense, useContext } from 'react';
 import { CELESTIALS } from '../../../contants/celestial';
 import { CelestialBodyContext } from '../../../contexts/CelestialBodyContext';
+import { CelestialContent } from '../../celestials/content';
 import { Earth } from '../../celestials/earth';
 import { Parker } from '../../celestials/parker';
 import { Space } from '../../celestials/space';
@@ -15,8 +16,13 @@ import { SelectToZoom } from './selectToZoom';
 import { ControlButton, ControlsContainer } from './styles';
 
 export function Home(): JSX.Element {
-  const { nextStep, previousStep, stepIndex } =
-    useContext(CelestialBodyContext);
+  const {
+    nextStep,
+    previousStep,
+    stepIndex,
+    selectedCelestialBody,
+    resetSteps,
+  } = useContext(CelestialBodyContext);
 
   return (
     <div
@@ -56,17 +62,27 @@ export function Home(): JSX.Element {
         </Suspense>
       </Canvas>
       <ControlsContainer>
-        {CELESTIALS.length > 1 && stepIndex !== 0 && (
-          <ControlButton onClick={previousStep}>
-            <CaretLeft size={24} />
-          </ControlButton>
-        )}
-        {CELESTIALS.length > 1 && stepIndex !== CELESTIALS.length - 1 && (
-          <ControlButton onClick={nextStep}>
-            <CaretRight size={24} />
+        {CELESTIALS.length > 1 &&
+          stepIndex !== 0 &&
+          CELESTIALS.length !== stepIndex + 1 && (
+            <ControlButton onClick={previousStep}>
+              <CaretLeft size={24} />
+            </ControlButton>
+          )}
+        {CELESTIALS.length > 1 &&
+          CELESTIALS.length !== stepIndex + 1 &&
+          stepIndex !== CELESTIALS.length - 1 && (
+            <ControlButton onClick={nextStep}>
+              <CaretRight size={24} />
+            </ControlButton>
+          )}
+        {CELESTIALS.length === stepIndex + 1 && (
+          <ControlButton onClick={resetSteps}>
+            <Repeat size={24} />
           </ControlButton>
         )}
       </ControlsContainer>
+      {selectedCelestialBody && <CelestialContent />}
     </div>
   );
 }

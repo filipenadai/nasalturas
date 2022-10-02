@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { CaretLeft, CaretRight, SkipForward } from 'phosphor-react';
+import { CaretLeft, CaretRight, SkipForward, Check } from 'phosphor-react';
 import Modal from 'react-modal';
 import { INTRODUCTION } from '../../contants/introduction';
 import { IntroductionModalContext } from '../../contexts/IntroductionModalContext';
@@ -55,7 +55,11 @@ export function Introduction(): JSX.Element {
             </ControlButton>
           )}
           <ControlButton onClick={closeIntroduction}>
-            <SkipForward size={24} />
+            {INTRODUCTION.length === stepIndex + 1 ? (
+              <Check size={24} />
+            ) : (
+              <SkipForward size={24} />
+            )}
           </ControlButton>
         </ControlsContainer>
       </Container>

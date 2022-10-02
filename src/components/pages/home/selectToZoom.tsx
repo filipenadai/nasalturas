@@ -14,8 +14,15 @@ interface SelectToZoomProps {
 
 export function SelectToZoom({ children }: SelectToZoomProps): JSX.Element {
   const api = useBounds();
-  const { selectCelestialBody, parkerRef, focus, earthRef, venusRef, sunRef } =
-    useContext(CelestialBodyContext);
+  const {
+    selectCelestialBody,
+    parkerRef,
+    focus,
+    earthRef,
+    venusRef,
+    sunRef,
+    selectFocus,
+  } = useContext(CelestialBodyContext);
 
   const handleClickCelestial = useCallback(
     (e: ThreeEvent<MouseEvent>) => {
@@ -28,28 +35,34 @@ export function SelectToZoom({ children }: SelectToZoomProps): JSX.Element {
   const handleClickMissed = useCallback(
     (e: MouseEvent) => {
       selectCelestialBody(undefined);
+      selectFocus(undefined);
       return e.button === 0 && api.refresh().fit();
     },
-    [api, selectCelestialBody]
+    [api, selectCelestialBody, selectFocus]
   );
 
   useEffect(() => {
     if (focus) {
       switch (focus) {
         case 'EARTH':
+          console.log(earthRef.current);
           selectCelestialBody(earthRef.current.name as CelestialBodyOptions);
           api.refresh(earthRef.current).fit();
           break;
         case 'PARKER':
+          selectCelestialBody(parkerRef.current.name as CelestialBodyOptions);
           api.refresh(parkerRef.current).fit();
           break;
         case 'SUN':
+          selectCelestialBody(sunRef.current.name as CelestialBodyOptions);
           api.refresh(sunRef.current).fit();
           break;
         case 'VENUS':
+          selectCelestialBody(venusRef.current.name as CelestialBodyOptions);
           api.refresh(venusRef.current).fit();
           break;
         default:
+          selectCelestialBody(undefined);
           api.refresh().fit();
           break;
       }

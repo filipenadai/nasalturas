@@ -27,6 +27,7 @@ interface CelestialBodyPropsData {
   venusRef: any;
   nextStep: () => void;
   previousStep: () => void;
+  resetSteps: () => void;
   stepIndex: number;
 }
 
@@ -72,6 +73,14 @@ export function CelestialBodyProvider({
     }
   }, [stepIndex]);
 
+  const resetSteps = useCallback(() => {
+    const contentLength = CELESTIALS.length;
+    if (contentLength === stepIndex + 1) {
+      setStepIndex(0);
+      setFocus('SUN');
+    }
+  }, [stepIndex]);
+
   const previousStep = useCallback(() => {
     const contentLength = CELESTIALS.length;
     if (contentLength >= 2 && stepIndex - 1 < contentLength) {
@@ -94,6 +103,7 @@ export function CelestialBodyProvider({
       cloudsRef,
       nextStep,
       previousStep,
+      resetSteps,
       stepIndex,
     };
   }, [
@@ -101,6 +111,7 @@ export function CelestialBodyProvider({
     selectedCelestialBody,
     focus,
     stepIndex,
+    resetSteps,
     selectFocus,
     nextStep,
     previousStep,

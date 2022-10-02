@@ -43,18 +43,18 @@ export const CELESTIALS = [
   },
   {
     title: 'A órbita até o Sol',
-    focus: undefined,
+    focus: 'PARKER',
     content: '',
   },
   {
     title: 'A órbita',
-    focus: undefined,
+    focus: 'VENUS',
     content:
       'A trajetória da sonda rumo ao Sol tem em seu caminho as órbitas dos planetas Vênus e Mercúrio. Para se aproximar tão perto de nossa estrela a órbita da missão envolverá sete passagens por Vênus, durante as quais, reduções na velocidade da sonda ajudarão a alterar sua órbita, de modo que ela se aproxime mais da superfície solar. Ao todo, serão executadas 24 translações ao redor do sol, sendo que nas passagens finais ocorrerão as maiores aproximações com a nossa estrela',
   },
   {
     title: 'Efeito Estilingue',
-    focus: undefined,
+    focus: 'PARKER',
     content:
       'Para ajustar a rota e melhorar a aproximação com o Sol, em suas 7 primeiras voltas, a sonda utilizará a partir da órbita de Vênus a manobra gravitacionalmente assistida, conhecida também como “Estilingue gravitacional”. Pense nessa manobra como aquela brincadeira de prender uma pedra em uma linha e a girar fortemente até lançá-la.  Com os giros a sonda consegue acertar sua trajetória para chegar mais próxima do Sol, além de aumentar sua velocidade',
   },

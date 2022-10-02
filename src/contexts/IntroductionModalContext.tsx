@@ -22,7 +22,7 @@ export function IntroductionModalProvider({
   children,
 }: IntroductionModalProviderProps): JSX.Element {
   const [stepIndex, setStepIndex] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   const nextStep = useCallback(() => {
     const contentLength = INTRODUCTION.length;

@@ -11,8 +11,8 @@ export function Parker(): JSX.Element {
 
   return (
     <>
-      <ambientLight intensity={1} position={[4, 4, 2]} />
-      <mesh scale={0.1} position={[3, 0, 3]} name="PARKER" ref={parkerRef}>
+      <ambientLight intensity={1} position={[8, 8, 4]} />
+      <mesh scale={0.1} position={[6, 0, 6]} name="PARKER" ref={parkerRef}>
         <primitive object={object.scene} />
       </mesh>
     </>

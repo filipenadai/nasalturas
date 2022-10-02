@@ -10,9 +10,9 @@ export function Earth(): JSX.Element {
   const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(
     TextureLoader,
     [
-      '/earth/8k_earth_daymap.jpg',
-      '/earth/8k_earth_normal_map.jpg',
-      '/earth/8k_earth_specular_map.jpg',
+      '/earth/8k_earth_daymap.jpeg',
+      '/earth/8k_earth_normal_map.jpeg',
+      '/earth/8k_earth_specular_map.jpeg',
       '/earth/8k_earth_clouds.jpg',
     ]
   );
@@ -28,7 +28,7 @@ export function Earth(): JSX.Element {
 
   return (
     <>
-      <mesh ref={cloudsRef} position={[-4, 0, -4]} name="EARTH">
+      <mesh ref={cloudsRef} position={[-8, 0, -8]} name="EARTH">
         <sphereGeometry args={[0.5, 32, 32]} />
         <meshPhongMaterial
           map={cloudsMap}
@@ -38,7 +38,7 @@ export function Earth(): JSX.Element {
           side={THREE.DoubleSide}
         />
       </mesh>
-      <mesh ref={earthRef} position={[-4, 0, -4]}>
+      <mesh ref={earthRef} position={[-8, 0, -8]} name="EARTH">
         <sphereGeometry args={[0.5, 32, 32]} />
         <meshPhongMaterial specularMap={specularMap} />
         <meshStandardMaterial
