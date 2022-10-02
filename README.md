@@ -1,34 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### On the way to the Sun
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Our project aims to tell young audiences the story of the Parker Solar Probe and how it is helping science make a big leap in studies about our star.
+The big question we asked ourselves initially was, "How are we going to arouse curiosity in young people to hear this story?" And even more: "Where do we need to talk about it to get the attention of this audience?".
+It was in search of these answers that we thought of the social networks. Nowadays everyone is connected through them, and video consumption in Brazil takes up a large part of our screen time. When we thought about where the young public would be, it was impossible to escape from TikTok and Instagram. Our idea then, starts with the creation of short videos that catch the user's attention through curiosities about our solar system, but that directly affect life on a daily basis, bringing a connection with their reality and making them want to understand better what we are talking about. After getting the necessary attention, the video leaves a link to a platform, and it is there that we will tell the Parker probe's journey.
+Having an interested audience, the idea is that the platform is interactive, with a brief automatic introduction, and at the end, a 3D globe (in space) appears on the screen for us to tell the origin, manufacture and launch of this mission. At the end of these curiosities the next action element appears on our screen, the orbit that the mission will follow, telling us a bit about the challenges and adventures needed to reach the destination. Again, at the end, the next action element appears, and it is Venus to tell us about the probe's first passage through it and what to expect at the end of the 7 that are planned. Continuing on, we have the Sun, the great destination of this story, here, we tell how it was to reach the corona and what this provides for science, and of course, for everyone!
+Behold, we have reached the final point of the platform, called "We are here", a path between the orbit of Venus and the solar corona, which will be repeated until the maximum approach to our star, and that makes it clear that we are just at the beginning!
+The platform may seem simple, but it guides the story and makes the user participate step by step in what happened, of course, briefly and in a simplified language for everyone's understanding. Only the coolest thing is that we can take advantage of the power of digital influencers to make this experience even more interesting for this public! Here in Brazil, for example, we have very famous streamers between the ages of 10 and 18 who, in this context, could narrate the explanatory text boxes, perhaps even make the initial video on social media, to engage a larger number of young people. Speaking of a larger number, this solution was meant to tell the Parker story, but what if it was a hosting of several mission stories? With an account for short videos on various topics to spark a desire to explore the universe? We would have not only a story in our heads, but the conception of the value of all space exploration, don't you think?
